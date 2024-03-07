@@ -1,0 +1,87 @@
+<header id="intro" style="display: block;">
+  <article class="fullheight" style="height: 568px;">
+    <div class="hgroup">
+      <h1>Online Store</h1>
+      <p><a href="/#welcome"><img src="/assets/images/arrow.png" alt="down arrow"></a></p>
+    </div>
+  </article>
+
+  <div class="scrollmagic-pin-spacer"
+       style="display: block; top: auto; left: auto; bottom: auto; right: auto; position: relative; margin: 0 auto auto; box-sizing: content-box; width: 100%; min-height: 44px; height: auto; padding-top: 0; padding-bottom: 0;">
+    <nav id="nav" style="position: relative; top: 0; left: 0; bottom: auto; right: auto; width: 100%;">
+      <div class="navbar">
+        <div class="brand"><a href="/#welcome"><span>Welcome to my Online Store</span></a></div>
+      </div><!-- navbar -->
+    </nav>
+  </div>
+</header>
+<main id="wrapper">
+  <div class="scene" id="welcome">
+    <article class="content">
+
+      <div class="row">
+          <h3>Available Products</h3>
+			
+          <div class="row" *ngIf="products">
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="table" id="poductssTable">
+                  <tbody>
+                    <tr *ngFor="let product of products">
+                      <td>
+                        <strong>Room #: {{product.name }}</strong><br/>
+                        <strong>Room #: {{product.type }}</strong><br/>
+                        <strong>Price: {{product.price }}</strong>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+      <form class="form-horizontal" [formGroup]="productSearchForm" (submit)="createProducts()">
+       
+          <div class="form-group">
+            <label for="name" class="col-4">Product Name:</label>
+            <div class="col-8">
+              <input id="productName" type="text" class="form-control" formControlName="productName">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="type" class="col-4">Product Type</label>
+            <div class="col-8">
+              <input id="productType" type="text" class="form-control" formControlName="productType">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="price" class="col-4">Product Price:</label>
+            <div class="col-8">
+            	 <input id="productPrice" type="text" class="form-control" formControlName="productPrice">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-offset-2 col-10">
+              <button type="submit" class="btn btn-primary and btn-lg">Create Product</button>
+            </div>
+          </div>
+        </form>
+    </article>
+  </div>
+</main>
+<footer class="scene">
+  <article class="content">
+    <div id="socialmedia">
+      <ul class="group">
+        <li><a href="https://twitter.com/"><img class="icon" src="/assets/images/twitter.png" alt="icon for twitter"></a></li>
+        <li><a href="http://www.facebook.com/"><img class="icon" src="/assets/images/facebook.png" alt="icon for facebook"></a></li>
+        <li><a href="http://www.youtube.com/"><img class="icon" src="/assets/images/youtube.png" alt="icon for youtube"></a>
+        </li>
+      </ul>
+    </div>
+  </article>
+</footer>
+<script src="/assets/images/script.js"></script>
