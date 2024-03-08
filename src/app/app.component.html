@@ -20,7 +20,7 @@
     <article class="content">
 
       <div class="row">
-          <h3>Available Products</h3>
+          <h2>Available Products</h2>
 			
           <div class="row" *ngIf="products">
             <div class="col-12">
@@ -29,9 +29,9 @@
                   <tbody>
                     <tr *ngFor="let product of products">
                       <td>
-                        <strong>Room #: {{product.name }}</strong><br/>
-                        <strong>Room #: {{product.type }}</strong><br/>
-                        <strong>Price: {{product.price }}</strong>
+                        <strong>Product Name #: {{product.name }}</strong><br/>
+                        <strong>Product Type #: {{product.type }}</strong><br/>
+                        <strong>Product Price: {{product.price }}</strong>
                       </td>
                     </tr>
                   </tbody>
@@ -40,9 +40,10 @@
             </div>
           </div>
       </div>
+      <br><br><br><br><br><br><br>
       
       <form class="form-horizontal" [formGroup]="productSearchForm" (submit)="createProducts()">
-       
+			<div><h2>Create New Product</h2> </div> 
           <div class="form-group">
             <label for="name" class="col-4">Product Name:</label>
             <div class="col-8">
